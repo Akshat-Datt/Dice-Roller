@@ -1,6 +1,7 @@
 package com.unit.diceroller
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -17,5 +18,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val rollBtn = findViewById<Button>(R.id.btnRoll)
+
+        rollBtn.text = "Let's Roll"
     }
 }
