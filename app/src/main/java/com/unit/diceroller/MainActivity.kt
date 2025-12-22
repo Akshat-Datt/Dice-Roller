@@ -2,6 +2,7 @@ package com.unit.diceroller
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -14,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.unit.diceroller.ui.theme.DiceRollerTheme
+import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +27,16 @@ class MainActivity : ComponentActivity() {
         rollBtn.text = "Let's Roll"
 
         rollBtn.setOnClickListener {
+            rollDice()
             Toast.makeText(this, "Dice is rolling!", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun rollDice() {
+        val diceNumber : TextView = findViewById<TextView>(R.id.tvDiceNummber)
+
+        var numberRolled = Random.nextInt(6) + 1
+
+        diceNumber.text = numberRolled.toString()
     }
 }
