@@ -2,6 +2,7 @@ package com.unit.diceroller
 
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
@@ -22,5 +23,9 @@ class MainActivity : ComponentActivity() {
         val rollBtn = findViewById<Button>(R.id.btnRoll)
 
         rollBtn.text = "Let's Roll"
+
+        rollBtn.setOnClickListener {
+            Toast.makeText(this, "Dice is rolling!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
