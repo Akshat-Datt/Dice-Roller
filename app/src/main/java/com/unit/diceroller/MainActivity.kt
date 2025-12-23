@@ -19,6 +19,9 @@ import com.unit.diceroller.ui.theme.DiceRollerTheme
 import kotlin.random.Random
 
 class MainActivity : ComponentActivity() {
+
+    lateinit var diceImage : ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -30,10 +33,11 @@ class MainActivity : ComponentActivity() {
         rollBtn.setOnClickListener {
             rollDice()
         }
+
+        diceImage = findViewById<ImageView>(R.id.ivDice)
     }
 
     private fun rollDice() {
-        val diceImage : ImageView = findViewById<ImageView>(R.id.ivDice)
         val numberRolled = Random.nextInt(6) + 1
         val rolledDice = when(numberRolled){
             1 -> R.drawable.dice_1
